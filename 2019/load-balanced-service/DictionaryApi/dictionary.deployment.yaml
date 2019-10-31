@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dictionary-api
+spec:
+  selector:
+    matchLabels:
+      name: dictionary-api
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        name: dictionary-api
+    spec:
+      containers:
+      - name: dictionary-api
+        image: dictionary:api
+        ports:
+        - containerPort: 80

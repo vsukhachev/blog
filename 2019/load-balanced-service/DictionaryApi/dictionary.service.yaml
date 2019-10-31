@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: dictionary-api-service
+spec:
+  selector:
+    name: dictionary-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      name: dictionary-api
+  type: NodePort
